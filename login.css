@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans&family=Poppins:wght@500;700&display=swap');
+
+
+body {
+    /*estilizando todo o corpo da página*/
+    margin: 0; /*tirando a margem da nossa página*/
+    font-family: 'Noto Sans',sans-serif;
+
+}
+
+body * {
+    box-sizing: border-box;
+    /*configurando o body para ter margens quando em tela menor*/
+
+}
+
+/*editando  as divs do nosso html*/
+.main-login {
+    width: 100vw; /*ajustando a porcentagem da largura da página*/
+    height: 100vh;
+
+    background: #201b2c; /*colocando a cor do background da página*/
+
+    /*vamos organizr o conteúdo da nossa div*/
+    display: flex; /*deixando as coisas lado a lado dentro da div/site (agora temos uma div na direita e ma na esquerda)*/
+
+    justify-content: center;     /*tags no centro*/
+    align-items: center;       /*tags no centro*/
+
+
+}
+
+/*criando os estilos para a div-esquerda*/
+.div-esquerda {
+    width: 50vw;
+    height: 100vh; /*altura*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*colocando a img abaixo do título*/
+    flex-direction: column;    
+
+}
+
+/*chamando elementos dentro da class no css*/
+.div-esquerda > h1 { 
+    font-size: 3vw;
+    color: #77ffc0; /*cor da fonte*/  
+
+}
+
+/*estilizando a img*/
+.imagem {
+    width: 35vw;
+
+}
+
+/*estilizando a div-direita*/
+.div-direita {
+    width: 50vw;
+    height: 100vh; /*o vh pega toda a tela e usa a porcentagem dela*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*estilizando o card*/
+.card-login {
+    width: 60%; /*a porcentagem pega o tamanho da div onde esta o car-login*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px; /*margens internas do card (componente). 30px em cima e embaixo e 35px dos dois lados*/
+    background: #2f2841;
+    border-radius: 20px; /*estilizando as bordas do card, nesse caso deixando elas redondas*/ 
+    box-shadow: 0px 10px 40px #00000056; /*estilizando a sombra no card*/
+
+}
+
+/*estilizando o título do card*/
+.card-login > h1 {
+    color: #00ff88;
+    font-weight: 800; /*peso da fonte, a grossura dela*/
+    margin: 0;
+
+}
+
+/*estilizando os textfilds*/
+.textfield {
+    /*o textfiel aqui está organizando o label e o input*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px; /*10px no eixo y e 0px no eixo x*/
+
+}
+
+/*estilizando o label e o input*/
+.textfield > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt; 
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box; /*para a div filha não ultrapassar a div pai*/
+
+}
+
+.textfield > label {
+    color: #f0ffffde;
+    margin-bottom: 10px; /*margem para baixo*/
+ 
+}
+
+/*estilizando o placeholder*/
+.textfield > input::placeholder { /*chamando o placeholder dos inputs*/
+    color: #f0ffff94;
+
+}
+
+/*estilizando o botão*/
+.botao-login {
+    width: 90%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px; /*arredondando as bordas do botão*/
+    outline: none; /*tirando o efeito que aparece no botão por padrão*/
+    text-transform: uppercase; /*deixando tudo em maiúsculo no botão*/
+    font-weight: 800;
+    letter-spacing: 4px; /*espacamento do nome login e das bordas*/
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer; /*mudando o cursor quando colocá-o sobre o botão*/
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+    /*sem o -12px o botão fica com um leve brilho*/
+    
+}
+
+/*criando media querys (cuidando da responsividade do site)*/
+@media only screen and (max-width: 950px){
+    .card-login {
+        /*quando a tela for menor que 950px o card-login vai ter um tamanho de 85%*/
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    /*para celular e telas menores*/
+    .main-login {
+        flex-direction: column;
+    }
+    /*na tela de um celular não usamos muitas informações, por isso aqui vamos tirar o título*/
+    .div-esquerda > h1 {
+        display: none; /*oculta as coisas do nosso html*/
+
+    }
+    /*faznedo o card do login ocupar quase toda a nossa tela e tbm a div-direita (img)*/
+    .div-direita {
+        width: 100%;
+        height: auto;
+
+    }
+    .div-esquerda {
+        width: 100%;
+        height: auto;
+
+    }
+    /*aumentar o tamanho da img*/
+    .div-esquerda-imagem {
+        width: 60vh;
+
+    }
+    .card-login {
+        width: 90%;
+
+    }
+}
